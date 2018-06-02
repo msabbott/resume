@@ -1,0 +1,52 @@
+
+$max-cols: 4;
+$data-cols: $max-cols - 1;
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 15px;
+}
+
+%cell {
+
+}
+
+@mixin row-start($start)  {
+  grid-row-start: $start;
+}
+
+@mixin row-span($span) {
+  grid-row-end: span $span;
+}
+
+@mixin row-start-span($start, $span) {
+  grid-row: $start / span $span;
+}
+
+@mixin col-start($start) {
+  grid-column-start: $start;
+}
+
+@mixin col-span($span) {
+  grid-column-end: span $span;
+}
+
+@mixin col-start-span($start, $span) {
+  grid-column: $start / span $span;
+}
+
+%first-col {
+  @extend %cell;
+  grid-column: 1;
+}
+
+%wide {
+  @extend %cell;
+  @include col-span($data-cols);
+}
+
+%full-width {
+  @extend %cell;
+  @include col-span($max-cols);
+}

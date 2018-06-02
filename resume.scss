@@ -1,0 +1,93 @@
+@import 'grid';
+$color-main: #333333;
+$color-light: #a3a3a3;
+
+body {
+  font-family: "open sans", sans-serif;
+  color: $color-main;
+}
+
+h1 {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: normal;
+  font-size: 1.4em;
+  margin: 0;
+}
+
+h2 {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: normal;
+  font-size: 1.2em;
+  font-style: italic;
+  margin: 0;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: $color-light;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 10% auto 10%;
+  grid-column-gap: 15px;
+}
+
+.name {
+  @include col-span($max-cols - 2);
+
+  h1 {
+    font-size: 48pt;
+  }
+
+  h2 {
+    font-size: 24pt;
+    font-style: normal;
+  }
+}
+
+.title {
+  @extend %first-col;
+}
+
+.data {
+  @extend %wide;
+}
+
+.spacer {
+  @extend %full-width;
+  @extend %first-col;
+}
+
+.data-spacer {
+  @extend %wide;
+}
+
+.experience {
+  @include row-span(11);
+}
+
+.exp-title {
+  @include col-span(2);
+}
+
+.exp-timeline {
+
+}
+
+.exp-detail {
+  @extend %wide;
+}
+
+.education {
+  @include row-span(7);
+}
+
+.edu-institute {
+  @extend %wide;
+}
+
+.edu-studies {
+  @extend %wide;
+}
