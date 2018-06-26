@@ -1,0 +1,20 @@
+.title {
+    @extend %first-col;
+
+    @include media('<=thin') {
+      @include col-span($max-cols-thin);
+    }
+}
+
+.data {
+  @extend %wide;
+}
+
+.spacer {
+  @extend %full-width;
+  @extend %first-col;
+}
+
+.data-spacer {
+  @extend %wide;
+}

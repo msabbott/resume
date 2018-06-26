@@ -1,6 +1,11 @@
 @import 'grid';
-$color-main: #333333;
-$color-light: #a3a3a3;
+@import 'resume-theme';
+@import 'resume-phone';
+@import 'resume-desktop';
+@import 'profile';
+@import 'avatar';
+@import 'sections';
+@import 'lightbox';
 
 body {
   font-family: "open sans", sans-serif;
@@ -10,7 +15,7 @@ body {
 h1 {
   font-family: "Roboto Condensed", sans-serif;
   font-weight: normal;
-  font-size: 1.4em;
+  font-size: 1.3em;
   margin: 0;
 }
 
@@ -22,46 +27,174 @@ h2 {
   margin: 0;
 }
 
+@include media('<=thin') {
+  h1 {
+    font-size: 24pt;
+  }
+
+  h2 {
+    font-size: 18pt;
+  }
+}
+
 hr {
   border: none;
   height: 1px;
   background-color: $color-light;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  :first-child {
+    border: none;
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
+
+li {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  border-top: 1px solid $color-light;
+}
+
+address {
+
+  a {
+    font-size: 18px;
+    text-decoration: none;
+    color: $color-light;
+  }
+
+  .icon {
+    font-size: 48px;
+  }
+}
+
+.buttons {
+
+
+  .icontext {
+    vertical-align: middle;
+    @include media('<=thin') {
+      font-size: 10pt;
+    }
+  }
+
+  @include media('>thin') {
+    @include col-span($data-cols-desktop);
+  }
+
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    color: $color-light;
+  }
+
+  .icon {
+    vertical-align: middle;
+    font-size: 48px;
+  }
+}
+
+.sociallink {
+
+  a {
+    text-decoration: none;
+  }
+
+  .icon {
+    font-size: 24pt;
+    color: $color-light;
+  }
+}
+
+.contact {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  text-align: center;
+}
+
+.shrunk {
+  display: none;
+}
+
+.expanded {
+  display: inherit;
+}
+
 .wrapper {
   display: grid;
-  grid-template-columns: 10% auto 10%;
-  grid-column-gap: 15px;
+
+  @include media('<=small') {
+    grid-template-columns: 1 auto 1;
+    grid-column-gap: 9px;
+  }
+
+  @include media('>small', '<=desktop') {
+    grid-template-columns: 1% auto 1%;
+    grid-column-gap: 15px;
+  }
+
+  @include media('>desktop') {
+    grid-template-columns: 10% auto 10%;
+    grid-column-gap: 15px;
+  }
 }
 
 .name {
-  @include col-span($max-cols - 2);
 
-  h1 {
-    font-size: 48pt;
+  @include media('<=thin') {
+    @include col-start-span(1, $max-cols-thin);
+
+    text-align: center;
+
+    h1 {
+      font-size: 40pt;
+    }
+
+    h2 {
+      font-size: 16pt;
+      font-style: normal;
+    }
   }
 
-  h2 {
-    font-size: 24pt;
-    font-style: normal;
+  @include media('>thin', '<=narrow') {
+    @include col-start-span(2, $max-cols-narrow - 1);
+    @include row-start(1);
+
+    text-align: center;
+
+    h1 {
+      font-size: 40pt;
+    }
+
+    h2 {
+      font-size: 16pt;
+      font-style: normal;
+    }
   }
-}
 
-.title {
-  @extend %first-col;
-}
+  @include media('>narrow') {
+    @include col-start-span(1, $max-cols-desktop);
 
-.data {
-  @extend %wide;
-}
+    h1 {
+      font-size: 56pt;
+    }
 
-.spacer {
-  @extend %full-width;
-  @extend %first-col;
-}
-
-.data-spacer {
-  @extend %wide;
+    h2 {
+      font-size: 28pt;
+      font-style: normal;
+    }
+  }
 }
 
 .experience {
@@ -69,7 +202,13 @@ hr {
 }
 
 .exp-title {
-  @include col-span(2);
+  @include media('<=thin') {
+    // Colspan of 1
+  }
+
+  @include media('>thin') {
+    @include col-span(2);
+  }
 }
 
 .exp-timeline {

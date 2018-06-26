@@ -1,0 +1,19 @@
+.avatar {
+
+  @include media('<=thin') {
+    @include col-start-span(1, $max-cols-thin);
+  }
+
+  @include media('>thin', '<=narrow') {
+    @include col-start(1);
+    @include row-start(1);
+  }
+
+  img {
+    width: 80%;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

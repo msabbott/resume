@@ -1,0 +1,30 @@
+.profile {
+
+  @include media('<=thin') {
+    @include col-start-span(1, $max-cols-thin);
+  }
+
+  @include media('>thin', '<=narrow') {
+    @include col-start-span(1, $max-cols-narrow);
+  }
+
+  @include media('>narrow') {
+
+    @include col-start-span(2, $data-cols-desktop);
+    @include row-start(2);
+
+    .spacer {
+      display: none;
+    }
+
+    .title {
+      display: none;
+    }
+
+    .data {
+      @include col-start-span(2, $data-cols-desktop);
+      @include row-start(2);
+      grid-row-end: 3;
+    }
+  }
+}

@@ -1,11 +1,26 @@
+@import 'include-media';
+@import 'breakpoints';
 
-$max-cols: 4;
-$data-cols: $max-cols - 1;
+$max-cols-thin: 1;
+$data-cols-thin: $max-cols-thin;
+$max-cols-narrow: 4;
+$data-cols-narrow: $max-cols-narrow - 1;
+$max-cols-desktop: 4;
+$data-cols-desktop: $max-cols-desktop - 1;
+$data-cols: $data-cols-desktop;
 
 .container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-column-gap: 15px;
+
+  @include media('<=thin') {
+    grid-template-columns: repeat($max-cols-thin, 1fr);
+    grid-column-gap: 15px;
+  }
+
+  @include media('>thin') {
+    grid-template-columns: repeat($max-cols-desktop, 1fr);
+    grid-column-gap: 15px;
+  }
 }
 
 %cell {
@@ -43,10 +58,24 @@ $data-cols: $max-cols - 1;
 
 %wide {
   @extend %cell;
-  @include col-span($data-cols);
+  @include media('<=thin') {
+    @include col-span($data-cols-thin);
+  }
+
+  @include media('>thin') {
+    @include col-span($data-cols-desktop);
+  }
 }
 
 %full-width {
   @extend %cell;
-  @include col-span($max-cols);
+
+  @include media('<=thin') {
+    @include col-span($max-cols-thin);
+  }
+
+  @include media('>thin') {
+    @include col-span($max-cols-desktop);
+  }
+
 }

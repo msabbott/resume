@@ -12,59 +12,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
     <!-- CSS -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed|Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed|Roboto">
+    <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css">
     <link rel="stylesheet" href="resume.css">
+
+    <!-- Scripts -->
+    <script src="lightbox.js"></script>
   </head>
   <body>
     <div class="wrapper">
       <div class="sparecolumn"></div>
       <div class="container">
 
-        <div class="avatar">
-          <address><a href="mailto:mark@msabbott.co.uk">mark@msabbott.co.uk</a> <a href="tel:+447949181292">+44 (0) 7949 181 292</a></address>
-        </div>
         <div class="name">
           <h1>Mark Abbott</h1>
           <h2>Head of Application Development</h2>
         </div>
+        <div class="avatar">
+          <img src="avatar.jpg" alt="Avatar" title="Mark Abbott">
+        </div>
+        <div class="contact">
+          <address>
+            <a href="mailto:mark@msabbott.co.uk" title="Email Mark Abbott - mark@msabbott.co.uk"><i class="fa fa-envelope icon"></i></a>
+            <a href="tel:+447949181292" title="Telephone Mark Abbott"><i class="fa fa-phone-square icon"></i></a>
+          </address>
+        </div>
         <div class="buttons">
-          <a href="markabbott.pdf">PDF</a><br />
-          <a href="markabbott.doc">Word</a>
+          <a href="markabbott.pdf"><i class="fa fa-file-pdf-o icon"></i><span class="icontext">Download PDF</span></a>
+          <a href="markabbott.doc"><i class="fa fa-file-word-o icon"></i><span class="icontext">Download Word</span></a>
         </div>
 
-        <div class="spacer"><hr /></div>
-        <div class="title"><h1>Profile</h1></div>
-        <div class="data">
-          <p>Mark is an Application Developer and Head of Application Development, with over 13 years of development experience, and 5 years experience of delivering applications of high business importance to internationally recognised brands.</p>
-          <p>As well as having a proven track record of delivering application development projects to time and to budget, and which help the business to improve overheads; Mark also has experience in improving process, and introducing complex toolsets to developers to achieve these improvements.</p>
+        <div class="profile">
+          <div class="spacer"><hr /></div>
+          <div class="title"><h1>Profile</h1></div>
+          <div class="data">
+            <p>Mark is an Application Developer and Head of Application Development, with over 13 years of development experience, and 5 years experience of delivering applications of high business importance to internationally recognised brands.</p>
+            <p>As well as having a proven track record of delivering application development projects to time and to budget, and which help the business to improve overheads; Mark also has experience in improving process, and introducing complex toolsets to developers to achieve these improvements.</p>
+          </div>
         </div>
 
         <div class="spacer"><hr /></div>
         <div class="title"><h1>Links</h1></div>
-        <div class="">LinkedIn</div>
-        <div class="">GitHub</div>
+        <div class="sociallink"><a href="https://www.linkedin.com/in/marksabbott" target="_blankLinkedIn"><i class="fa fa-linkedin-square icon"></i>LinkedIn</a></div>
+        <div class="sociallink"><a href="https://github.com/msabbott" target="_blankGitHub"><i class="fa fa-github-square icon"></i>GitHub</a></div>
+        <div class="sociallink"><a href="https://www.youracclaim.com/user/marksabbott" target="_blankAcclaim"><i class="fa fa-angle-double-up icon"></i>Acclaim</a></div>
 
         <div class="spacer"><hr /></div>
         <div class="title"><h1>Skills</h1></div>
         <div>
           <h1>Developer Management</h1>
           <p>I have experience of managing teams of different sizes, from 2 to 10 members; including off-shore and far-shore resources. My experience includes working in Waterfall and Agile environments.</p>
+          <p><a href="javascript:void(0);" class="more" onclick="javascript:showLightbox(this);" data-more-header="Developer Management" data-more-content="From June 2015 until present, I am the Head of Application Development, managing teams of developers and testers based in the UK and overseas; including 3rd party team members and fixed-price statements of work.|My work involves the planning of development tasks and the management of a development pipeline; working with test teams and test leads; and the personnel management of the development team.|My experience covers the creation of a toolset to cover the complete software development lifecycle, including Continuous Integration and Delivery tools, SCM, static code analysis, issue management, ITIL processes, coding standards and workflows.">more</a></p>
         </div>
         <div>
           <h1>Design &amp; Modernisation</h1>
           <p>I have produced, and implemented, technical and architectural design for in-house ERP systems for a large multi-national Business Service organisation, including devising strategies and technologies for modernisation efforts and cloud migration.</p>
+          <p><a href="javascript:void(0);" class="more">more</a></p>
         </div>
         <div>
           <h1>Project Direction</h1>
           <p>Proven ability to lead and manage a wide variety of design and development projects in team and independent situations, including working with Project Managers, Business Analysts, 3rd party suppliers and internal customers.</p>
+          <p><a href="javascript:void(0);" class="more">more</a></p>
         </div>
 
         <div class="spacer"><hr /></div>
         <div class="title"><h1>Technical</h1></div>
         <div>
           <ul>
-            <li>Progress OpenEdge</li>
+            <li class="expandable">Progress OpenEdge</li>
+            <li class="shrunk">Progress 4GL - 9.1D</li>
+            <li class="shrunk">Progress OpenEdge - 10.2A</li>
+            <li class="shrunk">Progress OpenEdge - 11.6</li>
+            <li class="shrunk">Progress PASOE</li>
             <li>Google Cloud</li>
+            <li class="shrunk">SOAP Web Services</li>
             <li>RESTful Web Services</li>
             <li>HTML5 &amp; CSS</li>
           </ul>
@@ -72,17 +93,27 @@
         <div>
           <ul>
             <li>PHP</li>
-            <li>Angular &amp; jQuery</li>
+            <li class="shrunk">CakePHP</li>
+            <li class="expandable">Angular &amp; jQuery</li>
+            <li class="shrunk">Angular v2</li>
+            <li class="shrunk">jQuery</li>
             <li>SonarQube</li>
             <li>Unit Testing</li>
+            <li class="shrunk">Ant &amp; PCT</li>
+            <li class="shrunk">VBScript</li>
           </ul>
         </div>
         <div>
           <ul>
             <li>Subversion &amp; Git</li>
+            <li class="shrunk">Roundtable TSMS</li>
             <li>iOS Development</li>
-            <li>CI &amp; CD</li>
+            <li class="expandable">CI &amp; CD</li>
+            <li class="shrunk">Bitbucket Pipelines</li>
+            <li class="shrunk">Jenkins</li>
+            <li class="shrunk">Atlassian Bamboo</li>
             <li>Linux</li>
+            <li class="shrunk">Mac OS X</li>
           </ul>
         </div>
 
@@ -90,15 +121,21 @@
         <div class="title"><h1>Non-Technical</h1></div>
         <div>
           <ul>
-            <li>Atlassian Jira &amp; Confluence</li>
+            <li class="expandable">Atlassian Jira &amp; Confluence</li>
+            <li class="shrunk">Jira Cloud Administration</li>
+            <li class="shrunk">Confluence Cloud Administration</li>
             <li>Microsoft Office</li>
             <li>Google Apps</li>
           </ul>
         </div>
         <div>
           <ul>
-            <li>Personnel Management</li>
-            <li>Client Liaising</li>
+            <li class="expandable">Agile &amp; Scrum</li>
+            <li class="shrunk">SAFe Scrum Master</li>
+            <li class="shrunk">Product Ownership</li>
+            <li class="expandable">Waterfall Development</li>
+            <li class="shrunk">Developmer &amp; Resource Allocation</li>
+            <li class="shrunk">Project Tracking</li>
             <li>Release Planning</li>
           </ul>
         </div>
@@ -106,6 +143,7 @@
           <ul>
             <li>Public Speaking</li>
             <li>Developer Training</li>
+            <li class="shrunk">Coaching &amp; Mentoring</li>
             <li>Process Improvement</li>
           </ul>
         </div>
@@ -213,9 +251,28 @@
 
         <div class="spacer"><hr /></div>
         <div class="title"><h1>References</h1></div>
-        <div>References available on request</div>
+        <div class="data">References available on request</div>
       </div>
       <div class="sparecolumn"></div>
     </div>
+    <div class="lightbox lightbox_overlay" style="display: none"></div>
+    <div class="lightbox lightbox_wrapper" style="display: none">
+      <h1 id="lightbox_header">Lightbox Header</h1>
+      <a href="#" onclick="javascript:hideLightbox();"><i class="fa fa-close icon"></i></a>
+      <div id="lightbox_content">
+        Lightbox Content
+      </div>
+    </div>
+    <script>
+
+      window.onload = function () {
+        // Iterate through all "more" links and set event handler
+        var links = document.getElementsByClassName("more");
+        for(var i = 0; i < links.length; i++) {
+          links[i].onclick = showLightbox;
+        }
+      };
+
+    </script>
   </body>
 </html>
