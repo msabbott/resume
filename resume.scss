@@ -115,7 +115,12 @@ address {
 
   .icon {
     font-size: 24pt;
+    vertical-align: middle;
     color: $color-light;
+  }
+    
+  .linktext {
+    vertical-align: middle;
   }
 }
 
