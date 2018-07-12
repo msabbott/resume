@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="resume.css">
 
     <!-- Scripts -->
-    <script src="lightbox.js"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -58,21 +57,27 @@
         <div class="sociallink"><a href="https://www.youracclaim.com/user/marksabbott" target="_blankAcclaim"><i class="fa fa-angle-double-up icon"></i>Acclaim</a></div>
 
         <div class="spacer"><hr /></div>
-        <div class="title"><h1>Skills</h1></div>
-        <div>
+        <div class="title">
+          <h1>Skills</h1>
+          <a href="javascript:void(0);" id="skills-more">more</a>
+        </div>
+        <div class="skill">
           <h1>Developer Management</h1>
           <p>I have experience of managing teams of different sizes, from 2 to 10 members; including off-shore and far-shore resources. My experience includes working in Waterfall and Agile environments.</p>
-          <p><a href="javascript:void(0);" class="more" onclick="javascript:showLightbox(this);" data-more-header="Developer Management" data-more-content="From June 2015 until present, I am the Head of Application Development, managing teams of developers and testers based in the UK and overseas; including 3rd party team members and fixed-price statements of work.|My work involves the planning of development tasks and the management of a development pipeline; working with test teams and test leads; and the personnel management of the development team.|My experience covers the creation of a toolset to cover the complete software development lifecycle, including Continuous Integration and Delivery tools, SCM, static code analysis, issue management, ITIL processes, coding standards and workflows.">more</a></p>
+          <p class="shrunk">From June 2015 until present, I am the Head of Application Development, managing teams of developers and testers based in the UK and overseas; including 3rd party team members and fixed-price statements of work.</p>
+          <p class="shrunk">My work involves the planning of development tasks and the management of a development pipeline; working with test teams and test leads; and the personnel management of the development team.</p>
+          <p class="shrunk">My experience covers the creation of a toolset to cover the complete software development lifecycle, including Continuous Integration and Delivery tools, SCM, static code analysis, issue management, ITIL processes, coding standards and workflows.</p>
         </div>
-        <div>
+        <div class="skill">
           <h1>Design &amp; Modernisation</h1>
           <p>I have produced, and implemented, technical and architectural design for in-house ERP systems for a large multi-national Business Service organisation, including devising strategies and technologies for modernisation efforts and cloud migration.</p>
-          <p><a href="javascript:void(0);" class="more">more</a></p>
+          <p class="shrunk">Recently, my work has focussed on the modernisation of the company's in-house ERP system, working with system architects to rebuild the application and to devise strategies and technologies; and to do this without significant down-time and whilst reducing risk to everyday availability.</p>
+          <p class="shrunk">Modernisation strategies have been used to rebuild the application in a cloud environment, changing application architecture, database technologies, and implementation languages.</p>
         </div>
-        <div>
+        <div class="skill">
           <h1>Project Direction</h1>
           <p>Proven ability to lead and manage a wide variety of design and development projects in team and independent situations, including working with Project Managers, Business Analysts, 3rd party suppliers and internal customers.</p>
-          <p><a href="javascript:void(0);" class="more">more</a></p>
+          <p class="shrunk">Over several years, I have worked as the development lead and development manager on application development and deployment projects. This has involved working in both Agile and Waterfall environments, working with team members with different skill sets; such as project managers, testers and business analysts.</p>
         </div>
 
         <div class="spacer"><hr /></div>
@@ -255,24 +260,5 @@
       </div>
       <div class="sparecolumn"></div>
     </div>
-    <div class="lightbox lightbox_overlay" style="display: none"></div>
-    <div class="lightbox lightbox_wrapper" style="display: none">
-      <h1 id="lightbox_header">Lightbox Header</h1>
-      <a href="#" onclick="javascript:hideLightbox();"><i class="fa fa-close icon"></i></a>
-      <div id="lightbox_content">
-        Lightbox Content
-      </div>
-    </div>
-    <script>
-
-      window.onload = function () {
-        // Iterate through all "more" links and set event handler
-        var links = document.getElementsByClassName("more");
-        for(var i = 0; i < links.length; i++) {
-          links[i].onclick = showLightbox;
-        }
-      };
-
-    </script>
   </body>
 </html>
