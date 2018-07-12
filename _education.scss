@@ -1,0 +1,23 @@
+.education {
+  @include row-span(7);
+}
+
+.education-sidepanel-expanded {
+  @include row-span(11);
+}
+
+.edu-institute {
+  @extend %wide;
+}
+
+.edu-studies {
+  @extend %wide;
+}
+
+.edu-shrunk {
+    display: none;
+}
+
+.edu-expanded {
+    
+}

@@ -5,6 +5,7 @@
 @import 'profile';
 @import 'avatar';
 @import 'sections';
+@import 'education';
 
 body {
   font-family: "open sans", sans-serif;
@@ -218,14 +219,3 @@ address {
   @extend %wide;
 }
 
-.education {
-  @include row-span(7);
-}
-
-.edu-institute {
-  @extend %wide;
-}
-
-.edu-studies {
-  @extend %wide;
-}
