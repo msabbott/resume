@@ -7,3 +7,21 @@ var updateLink = function(link, innerText, addListener, removeListener) {
             link.innerHTML = innerText;
     }
 };
+
+var logClick = function(action, category, label) {
+
+  if(null !== action) {
+      
+    var details = {};
+      
+    if(null !== category) {
+      details.event_category = category;  
+    }
+      
+    if(null !== label) {
+      details.event_label = label;
+    }
+      
+    gtag("event", action, details);
+  }
+};
