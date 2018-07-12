@@ -5,6 +5,7 @@
 @import 'profile';
 @import 'avatar';
 @import 'sections';
+@import 'experience';
 @import 'education';
 
 body {
@@ -195,27 +196,5 @@ address {
       font-style: normal;
     }
   }
-}
-
-.experience {
-  @include row-span(11);
-}
-
-.exp-title {
-  @include media('<=thin') {
-    // Colspan of 1
-  }
-
-  @include media('>thin') {
-    @include col-span(2);
-  }
-}
-
-.exp-timeline {
-
-}
-
-.exp-detail {
-  @extend %wide;
 }
 

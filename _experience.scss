@@ -1,0 +1,34 @@
+
+.experience {
+  @include row-span(11);
+}
+
+.experience-sidepanel-expanded {
+  @include row-span(20);
+}
+
+.exp-title {
+  @include media('<=thin') {
+    // Colspan of 1
+  }
+
+  @include media('>thin') {
+    @include col-span(2);
+  }
+}
+
+.exp-timeline {
+
+}
+
+.exp-detail {
+  @extend %wide;
+}
+
+.exp-shrunk {
+  display: none;
+}
+
+.exp-expanded {
+  display: block;
+}
