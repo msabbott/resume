@@ -1,0 +1,12 @@
+
+.skills-sidepanel-expanded {
+  grid-row-end: span 3;
+}
+
+.skill {
+
+}
+
+.skill-expanded {
+  @extend %wide;
+}
