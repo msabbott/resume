@@ -25,3 +25,15 @@ var logClick = function(action, category, label) {
     gtag("event", action, details);
   }
 };
+
+var getTarget = function(e) {
+  if(null !== e) {
+      if(e.currentTarget) {
+          return e.currentTarget;
+      } else {
+          return e.srcElement;
+      }
+  } else {
+      return null;
+  }
+};
