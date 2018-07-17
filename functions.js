@@ -37,3 +37,19 @@ var getTarget = function(e) {
       return null;
   }
 };
+
+var swapCSSClasses = function(elements, removeClass, addClass) {
+  if(null !== elements){
+      for(var i = elements.length - 1; 0 <= i; i--) {
+        if(elements[i].classList) {
+            if (null !== addClass) {
+                elements[i].classList.add(addClass);
+            }
+
+            if (null !== removeClass) {
+                elements[i].classList.remove(removeClass);
+            }
+        }
+      }
+  }
+};
