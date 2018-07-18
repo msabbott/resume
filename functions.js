@@ -53,3 +53,10 @@ var swapCSSClasses = function(elements, removeClass, addClass) {
       }
   }
 };
+
+var swapClasses = function(div, removeClass, addClass) {
+  if(null !== div) {
+    var items = div.getElementsByClassName(removeClass);
+    swapCSSClasses(items, removeClass, addClass);
+  }
+};
