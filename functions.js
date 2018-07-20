@@ -60,3 +60,17 @@ var swapClasses = function(div, removeClass, addClass) {
     swapCSSClasses(items, removeClass, addClass);
   }
 };
+
+var standardEvent = function(e, action, category, label, sidepanelClass, newLinkText, thisEventListener, newEventListener, oldCSSClass, newCSSClass) {
+    logClick(action, category, label);
+    var link = getTarget(e);
+    
+    if(link) {
+        link.parentElement.classList.toggle(sidepanelClass);
+
+        // Change settings on link
+        updateLink(link, newLinkText, newEventListener, thisEventListener);
+    }
+    
+    swapClasses(document, oldCSSClass, newCSSClass);
+};
