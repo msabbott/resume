@@ -1,3 +1,19 @@
+var expandExperience = function(e) {
+  standardEvent(e,
+                "expand", "experience", "Expand Experience",
+                "experience-sidepanel-expanded",
+                "less", expandExperience, shrinkExperience,
+                "exp-shrunk", "exp-expanded");
+};
+
+var shrinkExperience = function(e) {
+  standardEvent(e,
+                "shrink", "experience", "Shrink Experience",
+                "experience-sidepanel-expanded",
+                "more", shrinkExperience, expandExperience,
+                "exp-expanded", "exp-shrunk");
+};
+
 var expandEducation = function(e) {
   standardEvent(e,
                 "expand", "education", "Expand Education",
