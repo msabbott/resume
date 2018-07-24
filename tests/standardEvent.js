@@ -21,7 +21,7 @@ QUnit.test("standardEvent removes sidepanelclass", function (assert) {
     
     standardEvent(event, "action", "category", "label", "panelClass", "less", null, null, "oldClass", "newClass");
     
-    assert.ok(false == fixture.getElementsByTagName("div")[0].classList.contains("panelClass"));
+    assert.ok(false === fixture.getElementsByTagName("div")[0].classList.contains("panelClass"));
 });
 
 QUnit.test("standardEvent calls logClick", function (assert) {
