@@ -74,3 +74,19 @@ var standardEvent = function(e, action, category, label, sidepanelClass, newLink
     
     swapClasses(document, oldCSSClass, newCSSClass);
 };
+
+var expandSkillsList = function(e, listClass, newListener, currentListener, linkText) {
+
+  var link = getTarget(e);
+
+  // Change settings on link
+  updateLink(link, linkText, newListener, currentListener);
+
+  var divs = document.getElementsByClassName(listClass);
+
+  for(var i = 0; i < divs.length; i++) {
+    swapClasses(divs[i], "shrunk", "expandable-temp");
+    swapClasses(divs[i], "expandable", "shrunk");
+    swapClasses(divs[i], "expandable-temp", "expandable");
+  }
+};
