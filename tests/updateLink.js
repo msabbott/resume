@@ -1,3 +1,5 @@
+QUnit.module("Functions");
+
 var firstListenerCalled = false;
 var firstListener = function (e) {
     firstListenerCalled = true;
