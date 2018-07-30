@@ -29,3 +29,25 @@ var shrinkEducation = function(e) {
                 "more", shrinkEducation, expandEducation,
                 "edu-expanded", "edu-shrunk");  
 };
+
+var expandTechSkills = function(e) {
+  logClick("expand", "tech-skills", "Expand Tech Skills");
+  expandSkillsList(e, "skilllist-tech", shrinkTechSkills, expandTechSkills, "less");
+};
+
+var shrinkTechSkills = function(e) {
+  logClick("shrink", "tech-skills", "Shrink Tech Skills");
+  expandSkillsList(e, "skilllist-tech", expandTechSkills, shrinkTechSkills, "more");
+};
+
+var expandNonTechSkills = function(e) {
+  logClick("expand", "non-tech-skills", "Expand Non-Tech Skills");
+  expandSkillsList(e, "skilllist-nontech", shrinkNonTechSkills, expandNonTechSkills, "less");
+};
+
+var shrinkNonTechSkills = function(e) {
+  logClick("shrink", "non-tech-skills", "Shrink Non-Tech Skills");
+  expandSkillsList(e, "skilllist-nontech", expandNonTechSkills, shrinkNonTechSkills, "more");
+};
+
+
