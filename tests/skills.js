@@ -213,3 +213,101 @@ QUnit.test("shrinkNonTechSkills calls expandSkillsList", function (assert) {
     expandSkillsList = oldFunction;
     
 });
+
+QUnit.test("expandSkills calls standardEvent", function (assert) {
+
+    var event = {};
+    
+    // Create mock for function
+    var oldStandardEvent = standardEvent;
+    standardEvent = function(e, action, category, label, sidepanelClass, newLinkText, thisEventListener, newEventListener, oldCSSClass, newCSSClass) {
+        assert.equal(e, event);
+        assert.equal(action, "expand");
+        assert.equal(category, "skills");
+        assert.equal(label, "Expand Skills");
+        assert.equal(sidepanelClass, "skills-sidepanel-expanded");
+        assert.equal(newLinkText, "less");
+        assert.equal(thisEventListener, expandSkills);
+        assert.equal(newEventListener, shrinkSkills);
+        assert.equal(oldCSSClass, "shrunk");
+        assert.equal(newCSSClass, "expanded");
+    };
+    
+    expandSkills(event);
+    
+    // Restore mock
+    standardEvent = oldStandardEvent;
+});
+
+QUnit.test("expandSkills expands Div", function (assert) {
+    var event = {};
+    
+    // Create mock for function
+    var oldSwapClasses = swapClasses;
+    var callCount      = 0;
+    
+    swapClasses = function(div, removeClass, addClass) {
+        callCount++;
+        
+        // Only worried with second call. First call happens in standardEvent
+        if(2 == callCount) {
+            assert.equal(div, document);
+            assert.equal(removeClass, "skill-shrunk");
+            assert.equal(addClass, "skill-expanded");
+        }
+    };
+    
+    expandSkills(event);
+    
+    // Restore mock
+    swapClasses = oldSwapClasses;
+});
+
+QUnit.test("shrinkSkills calls standardEvent", function (assert) {
+
+    var event = {};
+    
+    // Create mock for function
+    var oldStandardEvent = standardEvent;
+    standardEvent = function(e, action, category, label, sidepanelClass, newLinkText, thisEventListener, newEventListener, oldCSSClass, newCSSClass) {
+        assert.equal(e, event);
+        assert.equal(action, "shrink");
+        assert.equal(category, "skills");
+        assert.equal(label, "Shrink Skills");
+        assert.equal(sidepanelClass, "skills-sidepanel-expanded");
+        assert.equal(newLinkText, "more");
+        assert.equal(thisEventListener, shrinkSkills);
+        assert.equal(newEventListener, expandSkills);
+        assert.equal(oldCSSClass, "expanded");
+        assert.equal(newCSSClass, "shrunk");
+    };
+    
+    shrinkSkills(event);
+    
+    // Restore mock
+    standardEvent = oldStandardEvent;
+});
+
+QUnit.test("shrinkSkills shrinks Div", function (assert) {
+    var event = {};
+    
+    // Create mock for function
+    var oldSwapClasses = swapClasses;
+    var callCount      = 0;
+    
+    swapClasses = function(div, removeClass, addClass) {
+        callCount++;
+        
+        // Only worried with second call. First call happens in standardEvent
+        if(2 == callCount) {
+            assert.equal(div, document);
+            assert.equal(removeClass, "skill-expanded");
+            assert.equal(addClass, "skill-shrunk");
+        }
+    };
+    
+    shrinkSkills(event);
+    
+    // Restore mock
+    swapClasses = oldSwapClasses;
+});

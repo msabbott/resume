@@ -50,4 +50,21 @@ var shrinkNonTechSkills = function(e) {
   expandSkillsList(e, "skilllist-nontech", expandNonTechSkills, shrinkNonTechSkills, "more");
 };
 
+var expandSkills = function(e) {
+    standardEvent(e, 
+                  "expand", "skills", "Expand Skills",
+                  "skills-sidepanel-expanded",
+                  "less", expandSkills, shrinkSkills,
+                  "shrunk", "expanded");
+    swapClasses(document, "skill-shrunk", "skill-expanded");
+};
+
+var shrinkSkills = function(e) {
+    standardEvent(e,
+                 "shrink", "skills", "Shrink Skills",
+                 "skills-sidepanel-expanded",
+                 "more", shrinkSkills, expandSkills,
+                 "expanded", "shrunk");
+    swapClasses(document, "skill-expanded", "skill-shrunk");
+};
 
