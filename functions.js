@@ -70,6 +70,13 @@ var addLinkLogForSelector = function(selector, category, label) {
   }
 };
 
+var addLinkLogForLink = function(href, category, label) {
+  if(null === label) {
+    label = href;
+  }
+  addLinkLogForSelector("a[href='" + href + "']", category, label);
+};
+
 var standardEvent = function(e, action, category, label, sidepanelClass, newLinkText, thisEventListener, newEventListener, oldCSSClass, newCSSClass) {
     logClick(action, category, label);
     var link = getTarget(e);

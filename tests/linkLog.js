@@ -48,3 +48,34 @@ QUnit.test("addLinkLogForSelector sets event handler", function (assert) {
     // Reset mock
     linkEventHandler = oldLinkEventHandler;
 });
+
+QUnit.test("addLinkLogForLink calls addLinkLogForSelector", function (assert) {
+    
+    var oldAddLinkLogForSelector = addLinkLogForSelector;
+    addLinkLogForSelector = function(selector, category, label) {
+        assert.equal(selector, "a[href='selector']");
+        assert.equal(category, "Category");
+        assert.equal(label, "Label");
+    };
+    
+    addLinkLogForLink("selector", "Category", "Label");
+    
+    // Restore mock
+    addLinkLogForSelector = oldAddLinkLogForSelector;
+});
+
+QUnit.test("addLinkLogForLink users href when label is null", function (assert) {
+    
+    var oldAddLinkLogForSelector = addLinkLogForSelector;
+    addLinkLogForSelector = function(selector, category, label) {
+        assert.equal(selector, "a[href='selector']");
+        assert.equal(category, "Category");
+        assert.equal(label, "selector");
+    };
+    
+    addLinkLogForLink("selector", "Category", null);
+    
+    // Restore mock
+    addLinkLogForSelector = oldAddLinkLogForSelector;
+    
+});
