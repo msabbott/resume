@@ -68,3 +68,7 @@ var shrinkSkills = function(e) {
     swapClasses(document, "skill-expanded", "skill-shrunk");
 };
 
+var linkEventHander = function(e) {
+    var link = getTarget(e);
+    logClick("click", link.dataset.category, link.dataset.label);
+};
