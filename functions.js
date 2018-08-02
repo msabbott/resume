@@ -61,6 +61,15 @@ var swapClasses = function(div, removeClass, addClass) {
   }
 };
 
+var addLinkLogForSelector = function(selector, category, label) {
+  var items = document.querySelectorAll(selector);
+  for(var i = 0; i < items.length; i++) {
+    items[i].dataset.category = category;
+    items[i].dataset.label = label;
+    items[i].addEventListener("click", linkEventHandler);
+  }
+};
+
 var standardEvent = function(e, action, category, label, sidepanelClass, newLinkText, thisEventListener, newEventListener, oldCSSClass, newCSSClass) {
     logClick(action, category, label);
     var link = getTarget(e);
