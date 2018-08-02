@@ -17,7 +17,7 @@ QUnit.test("linkEventHandler calls logClick", function (assert) {
         assert.equal(label, "Label");
     };
     
-    linkEventHander(event);
+    linkEventHandler(event);
 
     // Restore mock object
     logClick = oldLogClick;
