@@ -77,6 +77,13 @@ var addLinkLogForLink = function(href, category, label) {
   addLinkLogForSelector("a[href='" + href + "']", category, label);
 };
 
+var checkAndAddListener = function(selector, event, listener) {
+    var element = document.getElementById(selector);
+    if(element) {
+        element.addEventListener(event, listener);
+    }
+};
+
 var standardEvent = function(e, action, category, label, sidepanelClass, newLinkText, thisEventListener, newEventListener, oldCSSClass, newCSSClass) {
     logClick(action, category, label);
     var link = getTarget(e);
