@@ -20,7 +20,7 @@ var setupListenerTestAddListener = function(assert, testSelector, testListener) 
     
     // Restore mock
     checkAndAddListener = mock;
-}
+};
 
 var setupListenerTestAddLogLink = function (assert, testHref, testCategory, testLabel) {
     var fixture = document.getElementById("qunit-fixture");
