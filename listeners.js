@@ -72,3 +72,22 @@ var linkEventHandler = function(e) {
     var link = getTarget(e);
     logClick("click", link.dataset.category, link.dataset.label);
 };
+
+var setupListeners = function() {
+    checkAndAddListener('skills-more', 'click', expandSkills);
+    checkAndAddListener('techskills-more', 'click', expandTechSkills);
+    checkAndAddListener('nontechskills-more', 'click', expandNonTechSkills);
+    checkAndAddListener('experience-more', 'click', expandExperience);
+    checkAndAddListener('education-more', 'click', expandEducation);
+
+    addLinkLogForLink("mailto:mark@msabbott.co.uk", "email");
+    addLinkLogForLink("tel:+447949181292", "telephone");
+    addLinkLogForLink("markabbott.pdf", "download");
+    addLinkLogForLink("markabbott.doc", "download");
+
+    addLinkLogForLink("https://www.linkedin.com/in/marksabbott", "Social Link", "LinkedIn");
+    addLinkLogForLink("https://github.com/msabbott", "Social Link", "GitHub");
+    addLinkLogForLink("https://www.youracclaim.com/user/marksabbott", "Social Link", "Your Acclaim");
+};
+
+window.onload = setupListeners;
