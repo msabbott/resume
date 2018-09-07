@@ -132,6 +132,18 @@ address {
   .linktext {
     vertical-align: middle;
   }
+    
+  @include media('<=thin') {
+    text-align: center;
+    padding-top: 10px;
+  }
+}
+
+.qualification {
+  @include media('<=thin') {
+    text-align: center;
+    padding-top: 10px;
+  }    
 }
 
 .contact {
