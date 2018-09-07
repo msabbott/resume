@@ -88,6 +88,10 @@ var setupListeners = function() {
     addLinkLogForLink("https://www.linkedin.com/in/marksabbott", "Social Link", "LinkedIn");
     addLinkLogForLink("https://github.com/msabbott", "Social Link", "GitHub");
     addLinkLogForLink("https://www.youracclaim.com/user/marksabbott", "Social Link", "Your Acclaim");
+    
+    addLinkLogForLink("https://github.com/msabbott/resume", "Footer Link", "GitHub Repo");
+    addLinkLogForLink("/tests.html", "Footer Link", "Tests Link");
+    addLinkLogForLink("https://github.com/msabbott/resume-bdd", "Footer Link", "BDD GitHub Repo");
 };
 
 window.onload = setupListeners;
