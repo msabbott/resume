@@ -1,0 +1,6 @@
+node_modules
+npm-debug.log
+*-bak.js
+
+# Ignore Firebase Public directory
+public
