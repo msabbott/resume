@@ -27,4 +27,16 @@
       grid-row-end: 3;
     }
   }
+    
+    @media print {
+        @include col-start-span(1, $max-cols-desktop);
+
+    .spacer {
+      display: none;
+    }
+
+    .title {
+      display: none;
+    }
+    }
 }
