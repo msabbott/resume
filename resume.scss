@@ -119,9 +119,9 @@ address {
     font-size: 48px;
   }
     
-    @media print {
-        display: none;
-    }
+  @media print {
+    display: none;
+  }
 }
 
 .sociallink {
@@ -143,6 +143,10 @@ address {
   @include media('<=thin') {
     text-align: center;
     padding-top: 10px;
+  }
+    
+  @media print {
+    display: none;
   }
 }
 
