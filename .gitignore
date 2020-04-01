@@ -4,3 +4,7 @@ npm-debug.log
 
 # Ignore Firebase Public directory
 public
+
+# Firebase settings
+.firebase
+.firebaserc
