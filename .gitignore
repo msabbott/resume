@@ -8,3 +8,6 @@ public
 # Firebase settings
 .firebase
 .firebaserc
+
+# Ruby based SASS
+.sass-cache
