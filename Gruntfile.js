@@ -1,6 +1,9 @@
 module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        jshint: {
+            all: ["*.js"]
+        },
         qunit: {
             options: {
                 timeout: 10000,
@@ -52,9 +55,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-text-replace');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
 
-    grunt.registerTask('default', ['sass', 'connect', 'qunit', 'copy', 'replace']);
-    grunt.registerTask('build', ['sass']);
+    grunt.registerTask('default', ['jshint', 'sass', 'connect', 'qunit', 'copy', 'replace']);
+    grunt.registerTask('build', ['jshint', 'sass']);
     grunt.registerTask('test', ['connect', 'qunit']);
     grunt.registerTask('package', ['copy', 'replace']);
 };
