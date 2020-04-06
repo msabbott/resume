@@ -57,12 +57,12 @@ $data-cols: $data-cols-desktop;
 }
 
 %first-col {
-  @extend %cell;
+  @extend %cell !optional;
   grid-column: 1;
 }
 
 %wide {
-  @extend %cell;
+  @extend %cell !optional;
   @include media('<=thin') {
     @include col-span($data-cols-thin);
   }
@@ -73,7 +73,7 @@ $data-cols: $data-cols-desktop;
 }
 
 %full-width {
-  @extend %cell;
+  @extend %cell !optional;
 
   @include media('<=thin') {
     @include col-span($max-cols-thin);

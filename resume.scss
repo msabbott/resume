@@ -161,6 +161,11 @@ address {
   grid-column-start: 1;
   grid-column-end: 1;
   text-align: center;
+
+  @include media('<=thin') {
+    margin-bottom: 10px;
+  }
+
 }
 
 .shrunk {
