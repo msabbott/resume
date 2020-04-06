@@ -1,0 +1,32 @@
+{
+  "name": "markabbott-resume",
+  "version": "1.0.0",
+  "description": "Resume for Mark Abbott",
+  "main": "functions-bak.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msabbott/resume.git"
+  },
+  "author": "Mark Abbott",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/msabbott/resume/issues"
+  },
+  "homepage": "https://github.com/msabbott/resume#readme",
+  "devDependencies": {
+    "grunt": "^1.1.0",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-qunit": "^3.1.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-text-replace": "^0.4.0",
+    "jshint": "^2.11.0",
+    "sass": "^1.26.3"
+  },
+  "scripts": {
+    "build-sass": "sass resume.scss resume.css",
+    "test": "qunit.js",
+    "lint": "jshint *.js",
+    "build": "npm run lint && npm run build-sass && npm run test"
+  }
+}
