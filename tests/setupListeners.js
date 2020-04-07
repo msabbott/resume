@@ -1,23 +1,23 @@
 var testSetupListenerFixture = "<div><a id=\"skills-more\">more</a><a id=\"techskills-more\">more</a><a id=\"nontechskills-more\">more</a><a id=\"experience-more\">more</a><a id=\"education-more\">more</a></div>";
 
-var setupListenerTestAddListener = function(assert, testSelector, testListener) {
+var setupListenerTestAddListener = function (assert, testSelector, testListener) {
     var fixture = document.getElementById("qunit-fixture");
     fixture.innerHTML = testSetupListenerFixture;
-    
+
     var mock = checkAndAddListener;
-    checkAndAddListener = function(selector, event, listener) {
+    checkAndAddListener = function (selector, event, listener) {
         // Function could get called multiple times with different parameters, 
         // therefore, only confirm when correct combination has been met
-        if(selector === testSelector && event === "click" && listener === testListener) {
+        if (selector === testSelector && event === "click" && listener === testListener) {
             assert.ok(true);
         }
     };
-    
+
     // Indicate number of correct assertions expected
     assert.expect(1);
-    
+
     setupListeners();
-    
+
     // Restore mock
     checkAndAddListener = mock;
 };
@@ -25,21 +25,21 @@ var setupListenerTestAddListener = function(assert, testSelector, testListener) 
 var setupListenerTestAddLogLink = function (assert, testHref, testCategory, testLabel) {
     var fixture = document.getElementById("qunit-fixture");
     fixture.innerHTML = testSetupListenerFixture;
-    
+
     var mock = addLinkLogForLink;
-    addLinkLogForLink = function(href, category, label) {
+    addLinkLogForLink = function (href, category, label) {
         // Function could get called multiple times with different parameters, 
         // therefore, only confirm when correct combination has been met
-        if(href === testHref && category === testCategory && label === testLabel) {
+        if (href === testHref && category === testCategory && label === testLabel) {
             assert.ok(true);
         }
     };
-    
+
     // Indicate number of correct assertions expected
     assert.expect(1);
-    
+
     setupListeners();
-    
+
     // Restore mock
     addLinkLogForLink = mock;
 };

@@ -3,10 +3,10 @@ QUnit.module("Listeners");
 QUnit.test("expandExperience calls standardEvent", function (assert) {
 
     var event = {};
-    
+
     // Create mock for function
     var oldStandardEvent = standardEvent;
-    standardEvent = function(e, action, category, label, sidepanelClass, newLinkText, thisEventListener, newEventListener, oldCSSClass, newCSSClass) {
+    standardEvent = function (e, action, category, label, sidepanelClass, newLinkText, thisEventListener, newEventListener, oldCSSClass, newCSSClass) {
         assert.equal(e, event);
         assert.equal(action, "expand");
         assert.equal(category, "experience");
@@ -18,9 +18,9 @@ QUnit.test("expandExperience calls standardEvent", function (assert) {
         assert.equal(oldCSSClass, "exp-shrunk");
         assert.equal(newCSSClass, "exp-expanded");
     };
-    
+
     expandExperience(event);
-    
+
     // Restore mock
     standardEvent = oldStandardEvent;
 });
@@ -28,10 +28,10 @@ QUnit.test("expandExperience calls standardEvent", function (assert) {
 QUnit.test("shrinkExperience calls standardEvent", function (assert) {
 
     var event = {};
-    
+
     // Create mock for function
     var oldStandardEvent = standardEvent;
-    standardEvent = function(e, action, category, label, sidepanelClass, newLinkText, thisEventListener, newEventListener, oldCSSClass, newCSSClass) {
+    standardEvent = function (e, action, category, label, sidepanelClass, newLinkText, thisEventListener, newEventListener, oldCSSClass, newCSSClass) {
         assert.equal(e, event);
         assert.equal(action, "shrink");
         assert.equal(category, "experience");
@@ -43,9 +43,9 @@ QUnit.test("shrinkExperience calls standardEvent", function (assert) {
         assert.equal(oldCSSClass, "exp-expanded");
         assert.equal(newCSSClass, "exp-shrunk");
     };
-    
+
     shrinkExperience(event);
-    
+
     // Restore mock
     standardEvent = oldStandardEvent;
 });
