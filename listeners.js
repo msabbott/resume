@@ -80,10 +80,10 @@ var setupListeners = function() {
     checkAndAddListener('experience-more', 'click', expandExperience);
     checkAndAddListener('education-more', 'click', expandEducation);
 
-    addLinkLogForLink("mailto:mark@msabbott.co.uk", "email");
-    addLinkLogForLink("tel:+447949181292", "telephone");
-    addLinkLogForLink("markabbott.pdf", "download");
-    addLinkLogForLink("markabbott.doc", "download");
+  addLinkLogForLink("mailto:mark@msabbott.co.uk", "email", "email");
+  addLinkLogForLink("tel:+447949181292", "telephone", "mobile");
+  addLinkLogForLink("markabbott.pdf", "download", "PDF");
+  addLinkLogForLink("markabbott.doc", "download", "Word");
 
     addLinkLogForLink("https://www.linkedin.com/in/marksabbott", "Social Link", "LinkedIn");
     addLinkLogForLink("https://github.com/msabbott", "Social Link", "GitHub");

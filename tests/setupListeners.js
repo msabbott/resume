@@ -65,19 +65,19 @@ QUnit.test("setupListeners adds Click listeners - Education More", function (ass
 });
 
 QUnit.test("setupListeners adds LogClick for Mail link", function (assert) {
-    setupListenerTestAddLogLink(assert, "mailto:mark@msabbott.co.uk", "email", undefined);
+    setupListenerTestAddLogLink(assert, "mailto:mark@msabbott.co.uk", "email", "email");
 });
 
 QUnit.test("setupListeners adds LogClick for Phone link", function (assert) {
-    setupListenerTestAddLogLink(assert, "tel:+447949181292", "telephone", undefined);
+    setupListenerTestAddLogLink(assert, "tel:+447949181292", "telephone", "mobile");
 });
 
 QUnit.test("setupListeners adds LogClick for PDF link", function (assert) {
-    setupListenerTestAddLogLink(assert, "markabbott.pdf", "download", undefined);
+    setupListenerTestAddLogLink(assert, "markabbott.pdf", "download", "PDF");
 });
 
 QUnit.test("setupListeners adds LogClick for Doc link", function (assert) {
-    setupListenerTestAddLogLink(assert, "markabbott.doc", "download", undefined);
+    setupListenerTestAddLogLink(assert, "markabbott.doc", "download", "Word");
 });
 
 QUnit.test("setupListeners adds LogClick for LinkedIn link", function (assert) {
