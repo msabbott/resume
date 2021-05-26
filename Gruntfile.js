@@ -37,7 +37,8 @@ module.exports = function (grunt) {
                     { src: ["functions.js", "listeners.js"], dest: "public/" },
                     { src: ["*.jpg"], dest: "public/" },
                     { src: ["favicon/**"], dest: "public/" },
-                    { src: ["*.doc", "*.pdf"], dest: "public/" }
+                    { src: ["*.doc", "*.pdf"], dest: "public/" },
+                    { src: ["sitemap.xml", "robots.txt"], dest: "public/" }
                 ]
             }
         },
